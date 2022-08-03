@@ -5,6 +5,7 @@ bearing_h = 7;
 
 wheel_axis_d = 40;
 wheel_axis_l = 17;
+wheel_axis_spacer_d = 18;
 
 wheel_diameter = 150;
 wheel_width = 70;
@@ -105,6 +106,6 @@ union() {
             difference() {
                 cylinder(d=bearing_d+eps, h=wheel_axis_l-bearing_h*2);
                 translate([0,0,-eps])
-                    cylinder(d=bearing_d-4, h=wheel_axis_l-bearing_h*2+eps*2);
+                    cylinder(d=wheel_axis_spacer_d, h=wheel_axis_l-bearing_h*2+eps*2);
             }
 }
