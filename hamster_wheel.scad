@@ -29,7 +29,7 @@ eps = 0.01;
 
 union() {
     translate([0, wheel_width/2, 0])
-    difference() {
+    difference($fn=50) {
         scale([1, 1/wheel_ellipsoidicity, 1])
             union() {
                 for(i=[1:1:wheel_ladder_stairs_count])            
@@ -69,7 +69,7 @@ union() {
             translate([0, 0, 0])
                 cylinder(d=bearing_d, h=wheel_diameter, center=true);
         
-        rotate(90, [1, 0, 0])
+        rotate(90, [1, 0, 0], $fn=20)
             linear_extrude(height=wheel_diameter*2/wheel_ellipsoidicity, center=true)
                 for (i=[1:wheel_spokes_alpha]) {
                     rotate(wheel_spokes_alpha*i, [0,0,1]) projection() 
